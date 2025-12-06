@@ -1,0 +1,1 @@
+python detect_label_for_cls.py --root "C:\Users\qmphi\Downloads\football_train" --out "D:\A.I\dataset_clsv2" --player-id 4 --train-ratio 0.8 --dbg 10 --include-invisible-as-zero --min-side 15
