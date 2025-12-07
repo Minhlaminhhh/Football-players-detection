@@ -27,6 +27,7 @@ Val Accuracy
 
 # How to use
 I created a simple interface with a top button for running live screen detection and a second button below it for running detection on a selected video.
+
 <img width="393" height="208" alt="image" src="https://github.com/user-attachments/assets/7ba8a624-a94f-48ea-8393-da745711e035" />
 
 ## An example of a frame in the output videos:
