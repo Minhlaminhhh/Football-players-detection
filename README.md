@@ -35,4 +35,5 @@ I created a simple interface with a top button for running live screen detection
 
 # Link
 Link source video and detected dataset
-Link models (model weight)
+Link models (model weight) https://drive.google.com/drive/folders/1-CRu_91iQS1QRhykcRoPqrOTm1XTnjQw?usp=drive_link
+Link app (has been packed) https://drive.google.com/drive/folders/1-CRu_91iQS1QRhykcRoPqrOTm1XTnjQw?usp=drive_link
