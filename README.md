@@ -34,16 +34,43 @@ I created a simple interface with a top button for running live screen detection
 # Project Structure
 
 ```text
-football_train
-├── image_classification
-│   ├── checkpoints_mycnn
-│   │   ├── best.pt
-│   │   └── last.pt
-├── object_detection
-│   └── data
-│       ├── images
-│       └── labels
-└── prediction_pipeline.py
+football_Prj
+├── app
+│   ├── app_detect_and_cls
+│   │   ├── app_detect_and_cls.exe
+│   │   └── _internal (app data)
+│   ├── models
+│   │   ├── best_cls.pt
+│   │   └── best_yolo.pt
+│   └── app_detect_and_cls.py
+├── cls (image_classification)
+│   ├── dataset_for_cls
+│   │   ├── partial
+│   │   │   ├── train
+│   │   │   └── val
+│   │   ├── visible
+│   │   │   ├── train
+│   │   │   └── val
+│   ├── Log
+│   │   ├── Log_finetune_withpartial.txt
+│   │   └── Log_train_visible.txt
+│   ├── cls_kaggle_finetune.ipynb
+│   ├── cls_kaggle_train.ipynb
+│   ├── detect_label_for_cls command.txt
+│   └── detect_label_for_cls.py
+├── yolo (object_detection)
+│   ├── dataset_for_yolo
+│   │   ├── images
+│   │   │   ├── train
+│   │   │   └── val
+│   │   ├── labels
+│   │   │   ├── train
+│   │   │   └── val
+│   │   ├── classes.txt
+│   │   └── data.yaml
+│   ├── detect_label_for_yolo.py
+│   └── train_yolo.py
+└── source video
 ```
 # Link
 Link source video and detected dataset
