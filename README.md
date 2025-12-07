@@ -11,7 +11,7 @@ This is the first model in the pipeline. It takes a single frame within a video 
 ## Classification Model
 After detecting the position of each players, the second model, which is a classifier, will predict the jersey number of the corresponding players. It takes the crop image of the players as the input.
 
-In general, the first model outperformed with 85% accuracy
+In general, the first model outperformed with 85% accuracy (using transfer learning setup with convnext_tiny)
 
 *I made the model focus more on the jersey numbers by cropping out 20% from the bottom and 5% from the top of each extracted frame when separating the labels from the video for training. In the full pipeline, I also applied the same cropping ratio before sending the image to the model for prediction.*
 Results of the first model checkpoint using transfer learning setup with convnext_tiny
@@ -54,9 +54,9 @@ football_Prj
 │   ├── Log
 │   │   ├── Log_finetune_withpartial.txt
 │   │   └── Log_train_visible.txt
-│   ├── cls_kaggle_finetune.ipynb
-│   ├── cls_kaggle_train.ipynb
-│   ├── detect_label_for_cls command.txt
+│   ├── cls_kaggle_finetune.ipynb (for Kaggle notebook )
+│   ├── cls_kaggle_train.ipynb (for Kaggle notebook)
+│   ├── detect_label_for_cls command.txt (command for detect_label_for_cls.py)
 │   └── detect_label_for_cls.py
 ├── yolo (object_detection)
 │   ├── dataset_for_yolo
