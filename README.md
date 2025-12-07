@@ -33,6 +33,18 @@ I created a simple interface with a top button for running live screen detection
 <img width="2624" height="927" alt="test" src="https://github.com/user-attachments/assets/ee9798d6-fa40-4be3-a049-2bd9e330dd18" />
 # Project Structure
 
+```text
+football_train
+├── image_classification
+│   ├── checkpoints_mycnn
+│   │   ├── best.pt
+│   │   └── last.pt
+├── object_detection
+│   └── data
+│       ├── images
+│       └── labels
+└── prediction_pipeline.py
+```
 # Link
 Link source video and detected dataset
 
