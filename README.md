@@ -11,16 +11,22 @@ This is the first model in the pipeline. It takes a single frame within a video 
 ## Classification Model
 After detecting the position of each players, the second model, which is a classifier, will predict the jersey number of the corresponding players. It takes the crop image of the players as the input.
 
-In general, the first model outperformed with 85% accuracy (using transfer learning setup with convnext_tiny)
+I trained the model in two stages. In the first stage, I used only fully visible images. In the second stage, I fine-tuned the model on a combined dataset of fully visible and partially visible samples, starting from the first-stage weights. This second stage was intended to increase recall on harder partial-visibility patterns, so a slight drop in overall accuracy is expected as the model becomes less conservative and tries to detect more challenging cases.
+
+### Stage 1: train with fully visible and invisible jersey number (invisible as number 00/ Upper 11 as 11)
+The first stage model trained reached 85% accuracy (using transfer learning setup with convnext_tiny)
 
 *I made the model focus more on the jersey numbers by cropping out 20% from the bottom and 5% from the top of each extracted frame when separating the labels from the video for training. In the full pipeline, I also applied the same cropping ratio before sending the image to the model for prediction.*
 Results of the first model checkpoint using transfer learning setup with convnext_tiny
 
 Val Accuracy 
 <img width="1838" height="870" alt="val-acc" src="https://github.com/user-attachments/assets/be727960-a4fb-43c8-8229-495c625e7453" />
+
+### Stage 2: train with fully visible + partial visible jersey number 
+
 After that, I further fine-tuned the model using a dataset that also included partial-visible samples. 
 
-*Between reducing samples (adjusting the data distribution) and reducing weights (adjusting the loss function or gradient impact), I chose to reduce the partial samples by setting a 3–7 sampling ratio so the model would place less emphasis on partial cases. I also used a smaller learning rate to let the model gradually adapt to the more challenging patterns. However, the results were : the VIS accuracy did not even reach 80%, and the PAR accuracy was only around 40%.*
+*Between reducing samples (adjusting the data distribution) and reducing weights (adjusting the loss function or gradient impact), I chose to reduce the partial samples by setting a 3–7 sampling ratio so the model would place less emphasis on partial cases. I also used a smaller learning rate to let the model gradually adapt to the more challenging patterns. However, the results were: the VIS accuracy did not even reach 80%, and the PAR accuracy was only around 40%.*
 
 Val Accuracy 
 <img width="1852" height="891" alt="val-acc finetune" src="https://github.com/user-attachments/assets/ac738c3e-386c-4063-8f98-0067b6b4a654" />
